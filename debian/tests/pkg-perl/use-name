@@ -1,0 +1,2 @@
+# take an arbitrary module from the collection
+Dist::Zilla::Plugin::Metadata
