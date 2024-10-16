@@ -1,15 +1,54 @@
-Source: template-repository
-Section: unknown
+Source: libdist-zilla-plugins-cjm-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Dominique Dumont <dod@debian.org>,
+           gregor herrmann <gregoa@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
 Priority: optional
-Maintainer: Tsic404 <liuheng@deepin.org>
-Build-Depends: debhelper (>= 11)
+Build-Depends: debhelper-compat (= 13)
+Build-Depends-Indep: libdist-zilla-perl,
+                     libfile-homedir-perl,
+                     libfile-pushd-perl,
+                     libgit-wrapper-perl,
+                     libmoose-perl,
+                     libnamespace-autoclean-perl,
+                     libpath-tiny-perl,
+                     libtest-fatal-perl,
+                     libtry-tiny-perl,
+                     perl,
+                     perl | libcpan-meta-perl (>= 2.113640),
+                     perl | libmodule-metadata-perl,
+                     perl | libcpan-meta-requirements-perl
 Standards-Version: 4.1.3
-Homepage: https://github.com/deepin-community/template-repository
-#Vcs-Browser: https://salsa.debian.org/debian/deepin-community-template-repository
-#Vcs-Git: https://salsa.debian.org/debian/deepin-community-template-repository.git
+Vcs-Browser: https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl
+Vcs-Git: https://salsa.debian.org/perl-team/modules/packages/libdist-zilla-plugins-cjm-perl.git
+Homepage: https://metacpan.org/release/Dist-Zilla-Plugins-CJM
 
-Package: template-repository
-Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}
-Description: <insert up to 60 chars description>
- <insert long description, indented with spaces>
+Package: libdist-zilla-plugins-cjm-perl
+Architecture: all
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         libdist-zilla-perl,
+         libfile-homedir-perl,
+         libmoose-perl,
+         libnamespace-autoclean-perl,
+         libpath-tiny-perl,
+         perl | libcpan-meta-perl,
+         perl | libmodule-metadata-perl,
+         perl | libcpan-meta-requirements-perl
+Recommends: libgit-wrapper-perl
+Description: collection of CJM's plugins for Dist::Zilla
+ Collection of Dist::Zilla plugins. This package features the
+ following Perl modules:
+ .
+   * Dist::Zilla::Plugin::ArchiveRelease
+   * Dist::Zilla::Plugin::GitVersionCheckCJM
+   * Dist::Zilla::Plugin::MakeMaker::Custom
+   * Dist::Zilla::Plugin::Metadata
+   * Dist::Zilla::Plugin::ModuleBuild::Custom
+   * Dist::Zilla::Plugin::RecommendedPrereqs
+   * Dist::Zilla::Plugin::TemplateCJM
+   * Dist::Zilla::Plugin::Test::PrereqsFromMeta
+   * Dist::Zilla::Plugin::VersionFromModule
+   * Dist::Zilla::Role::HashDumper
+   * Dist::Zilla::Role::ModuleInfo
